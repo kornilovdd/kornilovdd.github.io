@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help V440-F</title>
+    
+    <style>
+        @font-face {
+            font-family: 'Proxima Nova Light';
+            src: url("../fonts/ProximaNova-Light.eot");
+            src: url("../fonts/ProximaNova-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/ProximaNova-Light.woff") format("woff"), url("../fonts/ProximaNova-Light.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            display: block;
+            max-width: 775px;
+            margin: 0 auto;
+            font-family: 'Proxima Nova Light';
+            max-width: 800px;
+            padding-top: 1%;
+        }
+        strong {
+            font-size: 24px;
+            padding-left: 2%;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <strong>Как пользоватся конфигуратором V440-F</strong>
+    <p href="">Для использования конфигуратора вам потребуется сделующая информация по задаче:<br>
+        <p></p>
+        1. Размеры области (ROI - region of interest)<br>
+        2. Информация о размере кода - линейный размер в мм и размер в ячейках.<br>
+    </p>
+    <strong>Порядок заполнения формы:<br> </strong>
+    <p>
+        1. Введите параметры "Длина" и "Ширина" области.<br>
+        2. Выберите объектив из выпадающего списка.<br> 
+        3. Выберите тип кода в выпадающем списке - QR или DataMatrix.<br>
+        4. Выберите размерность кода в ячейках и линейный размер кода в выпадающих списках.<br>
+        5. Нажмите кнопку "Рассчитать".
+    </p>
+    <strong>Вывод данных</strong>
+    <p>
+        После проведения рассчетов отобразится таблица с названием модели камеры, <br>
+        значений Field Of View по оси X и оси Y. Обратите внимание, что значение параметра "Ширина" <br>
+        может отличаться от заданного. В случае, если рассчетное значение меньше заданного, поле "Ширина"
+        в форме ввода будет выделено красным.
+        <br>Далее выводится параметр "Разрешение" - количество пикселей матрицы камеры на один элемент кода, измеряется в "ppe" - pixels per element. Если это значение ниже 3,
+        то процент считывания существенно снижается. В этом случае результата рассчетов представлено не будет. Пересмотрите
+        размер области по оси Y в меньшую сторону или рассмотрите использование смарт-камеры FHV7H.
+        <br>Справа выводится параметр "WD" - Working Distance.  
+    </p>
+    <p>
+        Ниже отображается список основных аксессуаров и ссылка на страницу продукта на официальном сайте Omron Russia.<br>
+        <br>Для очистки формы нажмите кнопку "Очистить форму".
+    </p>
+</body>
+</html>
