@@ -53,9 +53,14 @@ function cameraSelect() {
         resolFilter = resolModels.filter(function (item) {
             return item.resolution >= 3;
         });
-
-
-        let table = document.getElementById('table');
+        // подсчет камер с разрешением от 3 пикселей на элемент
+        var camCount = 0
+        camCount = resolFilter.length;
+        // console.log (camCount);
+        // вывод таблицы с подобранными камерами, если количество больше 0
+        if (camCount > 0) {
+            let table = document.getElementById('table');
+            document.getElementById("message").innerHTML = "";
         var headNames = ["Модель", "FOV X", "FOV Y", "Разрешение", "Work Distance до нижнего слоя"];
         var Table = document.getElementById("table");
         Table.innerHTML = "";
@@ -96,6 +101,14 @@ function cameraSelect() {
 
             table.appendChild(tr);
 
+        }
+        } else {
+        // CHANGE SOME <p> element
+        var msg = ''
+        msg = document.getElementById("countResol").innerHTML;
+        msg = msg + " Проверьре корректность введенных данных.";
+        document.getElementById("countResol").innerHTML = msg;
+        document.getElementById('table').innerHTML = "";
         }
 
 
