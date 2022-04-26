@@ -121,7 +121,7 @@ function cameraSelect() {
         // CHANGE SOME <p> element
             var msg = ''
             msg = document.getElementById("countResol").innerHTML;
-            msg = msg + " Проверьре корректность введенных данных.";
+            msg = msg + " Проверьте корректность введенных данных.";
             document.getElementById("countResol").innerHTML = msg;
             document.getElementById('table').innerHTML = "";
         }
