@@ -224,7 +224,13 @@ function minElemSize() {
     s = s * 100;
     s = Math.round(s);
     s = s / 100; 
-    document.getElementById("countResol").innerHTML = ' Размер элемента кода = ' + s + ' mil (' + m + " мм)";
+    if (isNaN(s)) {
+        document.getElementById("countResol").innerHTML = ' Пожалуйста, заполните форму.';
+        document.getElementById("countResol").style.fontSize = '22px'
+        document.getElementById("countResol").style.fontWeight = 'bold'
+    } else {
+        document.getElementById("countResol").innerHTML = ' Размер элемента кода = ' + s + ' mil (' + m + " мм)";
+    }
 }
 
 
