@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel=”icon” href=”favicon.ico” type=”image/x-icon”>
-  <title id = "title">V440-F</title>
+  <title>FHV7H</title>
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <link href="/css/css/bootstrap.css" rel="stylesheet">
@@ -13,13 +13,14 @@
 <link href="/csscss/bootstrap-utilities.css" rel="stylesheet">
 <link href="/csscss/bootstrap-grid.css" rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style440.css">
+  <link rel="stylesheet" href="css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
   <!-- <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE"> -->
 </head>
-<script src="/js/calculateWD440.js"></script>
-<script src="/js/codeSizeSelect440.js"></script>
-<script src="/js/cameraSelection440.js"></script>
+<script src="/js/calculateWD.js"></script>
+<script src="/js/codeSizeSelect.js"></script>
+<script src="/js/cameraSelection.js"></script>
 <script src="/js/js/bootstrap.bundle.js"></script>
 <script src="/js/js/bootstrap.js"></script>
 <script src="/js/js/bootstrap.bundle.min.js"></script>
@@ -37,35 +38,40 @@ myModal.addEventListener('shown.bs.modal', function () {
 
   <header class="header">
     <div class="menu">
+      
       <div class="container">
-        <nav class="menu__nav">
-          <a href="#" class="menu__link">ГЛАВНАЯ</a>
-          <a href="#" class="menu__link">КАТАЛОГ</a>
-          <a href="#" class="menu__link">УСЛОВИЯ ПЕРЕДАЧИ</a>
-          <a href="#" class="menu__link">КОНТАКТЫ</a>
-        </nav>
+        
       </div>
       <!-- /.container -->
-
+      
     </div>
     <!-- /.menu -->
     <div class="navbar">
 
       <div class="container">
         <div class="navbar-wrap">
-          
+          <!-- <button class="menu-button navbar__menu-button">
+            <span class="menu-button__line"></span>
+            <span class="menu-button__line"></span>
+            <span class="menu-button__line"></span>
+          </button> -->
           <div class="logo navbar__logo">
             <strong class="logo__text">OMRON VISION</strong>
-            
+            <!-- <select name = "camType" id = "cameraType" onchange="window.location.href=this.options[this.selectedIndex].value">
+              <option VALUE="/index.html">FHV7H</option>
+              <option VALUE="/index440.html">V440-F</option>
+          </select> -->
           <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn" id = "cameras">Камера</button>
+            <button onclick="myFunction()" class="dropbtn" id = "cameras">FHV7H</button>
             <div id="myDropdown" class="dropdown-content">
               <a href="/index.html">FHV7H</a>
               <a href="/index440.html">V440-F</a>
             </div>
-
           </div>
 
+            <!-- <span class="logo__description">GroupCode V440-F configurator</span> -->
+          </div>
+            <!-- <span class="logo__description">GroupCode FHV7H configurator</span> -->
           </div>
           <!-- /.logo navbar__logo -->
         </div>
@@ -82,13 +88,13 @@ myModal.addEventListener('shown.bs.modal', function () {
     <div class="container">
       <div class="inputs">
         <div class="input-group">
-          <span class="input-group-text" data-bs-toggle="tooltip" data-bs-placement="right" title="Field Of View">Размеры области (мм)</span>
+          <span class="input-group-text" data-bs-toggle="tooltip" data-bs-placement="right" title="Field Of View">Размеры слоя(мм)</span>
           <input onkeyup="replace(this)" type="text" aria-label="lenght" placeholder="Длина" class="form-control"
             id="lenght" style="text-align: center;">
           <input onkeyup="replace(this)" type="text" aria-label="width" placeholder="Ширина" class="form-control"
             id="width" style="text-align: center;">
-          <!-- <input onkeyup="replace(this)" type="text" aria-label="height" placeholder="Высота" class="form-control"
-            id="height" style="text-align: center;"> -->
+          <input onkeyup="replace(this)" type="text" aria-label="height" placeholder="Высота" class="form-control"
+            id="height" style="text-align: center;">
           <!--<input type="text" aria-label="hegiht" class="form-control" id="hegiht"> -->
         </div>
       </div>
@@ -101,13 +107,11 @@ myModal.addEventListener('shown.bs.modal', function () {
             <select name="lensSize" id="lense" style="border-radius: 4px; border-color: #d1d1d1; " onchange = 'ufuf()'>
               <option disabled selected value="">Выберите объектив (мм)...</option>
               <option value="8">C-mount SV-0814H (8мм)</option>
+              <option value="9">FHV-LEM-S09 (9мм)</option>
+              <option value="12">FHV-LEM-S12 (12мм)</option>
               <option value="12">C-mount SV-1214H (12мм)</option>
+              <option value="16">FHV-LEM-S16 (16мм)</option>
               <option value="16">C-mount SV-1614H (16мм)</option>
-              <option value="25">C-mount SV-2514H (25мм)</option>
-              <option value="35">C-mount SV-3514H (35мм)</option>
-              <option value="50">C-mount SV-5014H (50мм)</option>
-              <option value="75">C-mount SV-7525H (75мм)</option>
-              <option value="100">C-mount SV-10028H (100мм)</option>
             </select></div>
 
           </div>
@@ -170,26 +174,27 @@ myModal.addEventListener('shown.bs.modal', function () {
             <option value="25">25x25 mm</option>
             <option value="26">26x26 mm</option>
           </select>
-          <!-- <div class="input-group mb-3">
+          <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <label class="input-group-text" for="inputGroupSelect02" style="width: 240px; text-align: center;">Количество слоев</label>
-            </div> -->
-            <!-- <select name="rowCount" id="rows" style="border-radius: 4px; border-color: #d1d1d1; ">
+              <label class="input-group-text" for="inputGroupSelect02" style="width: 240px; text-align: center; height: 40px;">Количество слоев</label>
+            </div>
+            <select name="rowCount" id="rows" style="border-radius: 4px; border-color: #d1d1d1; ">
               <option selected value="0">1 слой</option>
-              
-            </select> -->
+              <option value="1">2 слоя</option>
+              <option value="2">3 слоя</option>
+              <option value="3">4 слоя</option>
+            </select>
           </div>
-          <button type="button" class="btn btn-primary" onclick=" calculateWD440(); minElemSize(); cameraSelect(); addTextNode()"
-        id="calc">Рассчитать</button>
+        </div>
+        <button type="button" class="btn btn-primary" onclick=" calculateWD004(); calculateWD016(); calculateWD032();
+        calculateWD050(); calculateWD063(); calculateWD120(); minElemSize(); cameraSelect(); addTextNode()"
+        id="calc">Подобрать</button>
       <button value="Refresh Page" class="btn btn-primary" id="clear"
         onclick="document.location.reload(true)">Очистить форму</button>
       </div>
-        </div>
-        
       <!-- Button trigger modal -->
       
       <div class="outputs">
-
         <p class="card-text" id="countResol"></p>
         <p  id="message"></p>
         <table class="table table-hover" id="table"></table>
@@ -199,16 +204,15 @@ myModal.addEventListener('shown.bs.modal', function () {
       <p id="p2"></p>
       <p id="p3"></p>
       <a id="p4"></a>
-      </div>
-
+      
     </div>
 
   </main>
   <footer>
     <p></p>
     <a></a>
-    <a id = "help" href = "howTo_440.html" target="_blank">Помощь</a>
-    <!-- <a id = "author">DK 2021</a> -->
+    <a id = "help" href = "howTo_FHV.html" target="_blank">Помощь</a>
+ 
   </footer>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
