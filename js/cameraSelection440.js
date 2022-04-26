@@ -15,14 +15,68 @@ function cameraSelect() {
        
     ];
 
+    // if (k = 'DataMatrix') {
+    //     resolFilter = resolModels.filter(function (item) {
+    //         return item.resolution >= 3;
+    //     });
+
+
+    //     let table = document.getElementById('table');
+    //     var headNames = ["Модель", "FOV X", "FOV Y", " Разрешение", "   Work Distance"];
+    //     var Table = document.getElementById("table");
+    //     Table.innerHTML = "";
+    //     var thead = document.createElement('thead');
+
+    //     table.appendChild(thead);
+
+    //     for (var i = 0; i < headNames.length; i++) {
+    //         thead.appendChild(document.createElement("th")).
+    //         appendChild(document.createTextNode(headNames[i]));
+    //     }
+    //     for (let camResult of resolFilter) {
+
+
+
+    //         let tr = document.createElement('tr');
+    //         tr.setAttribute("id", "tbl");
+
+    //         let td1 = document.createElement('td');
+    //         td1.innerHTML = camResult.model;
+    //         tr.appendChild(td1);
+
+    //         let td2 = document.createElement('td');
+    //         td2.innerHTML = camResult.FOVX + " mm";
+    //         tr.appendChild(td2);
+
+    //         let td3 = document.createElement('td');
+    //         td3.innerHTML = camResult.FOVY + " mm";
+    //         tr.appendChild(td3);
+
+    //         let td4 = document.createElement('td');
+    //         td4.innerHTML = camResult.resolution + " px per elem";
+    //         tr.appendChild(td4);
+
+    //         let td5 = document.createElement('td');
+    //         td5.innerHTML = camResult.WD + " mm";
+    //         tr.appendChild(td5);
+
+    //         table.appendChild(tr);
+
+    //     }
+
     if (k = 'DataMatrix') {
         resolFilter = resolModels.filter(function (item) {
             return item.resolution >= 3;
         });
-
-
-        let table = document.getElementById('table');
-        var headNames = ["Модель", "FOV X", "FOV Y", " Разрешение", "   Work Distance"];
+        // подсчет камер с разрешением от 3 пикселей на элемент
+        var camCount = 0
+        camCount = resolFilter.length;
+        // console.log (camCount);
+        // вывод таблицы с подобранными камерами, если количество больше 0
+        if (camCount > 0) {
+            let table = document.getElementById('table');
+            document.getElementById("message").innerHTML = "";
+        var headNames = ["Модель", "FOV X", "FOV Y", "Разрешение", "Work Distance"];
         var Table = document.getElementById("table");
         Table.innerHTML = "";
         var thead = document.createElement('thead');
@@ -63,7 +117,14 @@ function cameraSelect() {
             table.appendChild(tr);
 
         }
-
+    } else {
+        // CHANGE SOME <p> element
+            var msg = ''
+            msg = document.getElementById("countResol").innerHTML;
+            msg = msg + " Проверьре корректность введенных данных.";
+            document.getElementById("countResol").innerHTML = msg;
+            document.getElementById('table').innerHTML = "";
+        }
 
     } else if (k = 'QR') {
         resolFilter = resolModels.filter(function (item) {
@@ -130,4 +191,4 @@ function addTextNode(text) {
 
 // Для отображения fov и WD для каждой камеры нужно создать массив, куда будут записываться расчетные значения.
 // Обращаться к нему в свойствах вот так - resolFilter[1].resolution - array[index].property
-// ДОБАВИТЬ СВОЙСТВО ОБЪЕКТА WD     DONE!
+// ДОБАВИТЬ СВОЙСТВО ОБЪЕКТА WD     DONE
